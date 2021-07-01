@@ -1,0 +1,170 @@
+	-Clase #1: 23-03-2021_Martes:
+La materia consiste en conocer el mundo de la programación desde Python.
+
+Links de información Introducción  la Programación:
+
+http://materias.fi.uba.ar/7501/apunte%20PYTHON.pdf    UBA
+http://do1.dr-chuck.com/pythonlearn/ES_es/pythonlearn.pdf    Python para todos
+
+IDE Python ligero, intuitivo, piola: Thonny
+
+Anotar la actividad como Iniciales de materia/fecha/Apellido_nombre/PDF
+
+	-Clase #2: 24-03-2021_Miercoles:
+Feriado.
+
+	-Clase #3: 30-03-2021_Martes:
+
+Tarea de investigar todo sobre Bytes.
+
+Bueno, hoy estuvimos hablando mucho del tema mencionado a investigar. Muy interesante, hablamos de los lenguajes de bajo y alto nivel, y de su utilidad en relación a los bytes, y a su medida, los bit. Además de la estructura básica de una computadora: CPU, RAM como memoria primaria, y unidades de almacenamiento, como unidades secundarias.
+
+RECORDAR REGISTRAR LOS TRABAJOS DESDE LA PLATAFORMA.
+
+	-Clase #4: 31-03-2021_Miercoles:
+
+ENFASIS IMPORTANTE: Hacer actividades obligatorias.
+
+Hoy estuvimos viendo como es de importante detectar bien el ambiente en donde se especifica un algoritmo.
+Además, estuvimos viendo algunos conceptos técnicos de la programación.
+
+	-Clase #5: 06-04-2021_Martes:
+
+Hoy estuvimos repasando todo sobre los algoritmos, como se definen también en pseudocódigo, y en diagrama de flujo.
+
+Dejó de tarea, solucionar el tercer condicional, y pasar ese diagrama de flujo a pseudocódigo.
+
+	-Clase #6: 07-04-2021_Miercoles:
+	
+Hoy estuvimos profundizando sobre pseudocodigo y diagrama de flujo, y además explico sobre condicionales y lazos.
+
+Además dejo una tarea para hacer sobre pseudocodigo.
+
+	-Clase #7: 13-04-2021_Martes:
+
+Hoy segimos analizando pseudocódigo. Dejó otra tarea.
+
+	-Clase #8: 14-04-2021_Miercoles:
+
+Proseguimos con el analisis del desarrollo de un programa desde el pseudocódigo, hasta ahora, nada nuevo.
+Hay que tener paciencia en esta, y en otras materias, porque este, es el primer cuatrimestre.
+Dejo como tarea, terminar de analizarlo del martes.
+
+	-Clase #9: 20-04-2021_Martes:
+	
+Hoy estuvimos conociendo Python en Thonny.
+
+	-Clase #10: 21-04-2021_Miercoles:
+	
+Hoy continuamos profundizando en python, y podría decir que aprendí algo nuevo. Se puede poner una f adelante de las comillas, se pueden poner las variables entre llaves, dentro de las comillas, pudiendo hacer una operación.
+Ctrl+L para borrar consolas de Thonny, Linux, y en general.
+El profe pidió hacer los ejercicios 12 y 13.
+
+	-Clase #11: 27-04-2021_Martes:
+	
+Hoy estuvimos viendo los ejercicios 12, 13, y 14.
+
+	-Clase #12: 28-04-2021_Miercoles:
+	
+Hoy llevamos a cabo un poco mas de práctica desde los ejercicios.
+
+	-Clase #13: 04-05-2021_Martes:
+	
+Hoy estuvimos viendo más que nada, algunas herramientas útiles que tiene Python.
+Básicamente los Strings.
+
+	-Clase #14: 05-05-2021_Miercoles:
+
+Hoy estuvimos viendo mas sobre Strings, es pertinente la necesidad de
+avanzar rápido con los trabajos de todas las materias, en especial
+acá, y disolver la lista de tareas. Esta pasando mucho tiempo.
+
+	-Clase #15: 11-05-2021_Martes:
+	
+Cuestión. El profe está preparando las notas, habría que deliberar en la cena, que piensan mis papas sobre avisarle al profesor.
+
+El profe amenaza con dar un parcial. Dice también que el que tiene experiencia, tiene que tener mas presión, esta bueno analizar de
+decirle que si a la propuesta de avisarle. El no está viendo mucha actividad, la idea puede motivarlo.
+
+Punto y aparte. El profe dice que los prints no tienen que ser demasiado largos, por que molesta, y tiene razón. Molesta(70 y pico de
+caracteres, debe de estar entre 70 y 75, el tiró 72).
+
+COMILLA TRIPLE para los prints e inputs, desde ahora siempre. Peeeero el profe recomienda que en los prints usemos coma/enter, y en un input
+un más (+).
+
+
+Después de ese tema, estuvimos repasando un ejercicio sencillo de Federico Nieto, y aprendiendo cosas como que sorted se usa para ordenar elementos.
+
+	-Clase #16: 12-05-2021_Miercoles:
+	
+"List" sirve para convertir los indices de un string a una lista... Poderoso.
+Ctrl + Espacio sirve para autocompletar instrucciones. Lindo.
+
+	-Clase #17: 18-05-2021_Martes:
+	
+Hoy estuvimos analizando que son los arrays, y como sirven, además analizamos la definición, y usos de un diccionario.
+
+	-Clase #18: 19-05-2021_Miercoles:
+	
+Hoy estuvimos elaborando ejercicios en torno a los diccionarios.
+
+	-Clase #19: 25-05-2021_Martes:
+	
+Hoy no tuvimos clase.
+
+	-Clase #20: 26-05-2021_Miercoles:
+	
+Hoy estuvimos prácticando, y conociendo las funciones.
+
+	-Clase #21: 01-06-2021_Martes:
+	
+Hoy no tuvimos clase.
+	
+	-Clase #22: 02-06-2021_Miercoles:
+
+Hoy fue una clase para resolver dudas, no mas que en detalle de eso
+
+	-Clase #23: 08-05-2021_Martes:
+	
+Hoy hicimos un práctico en grupo, el cual vamos a seguir mañana.
+
+	-Clase #24: 09-06-2021_Miercoles:
+	
+Hoy en este trabajo, redimencione mis conocimientos con la recursividad. La recursividad hace que la función se llame a si misma, y eso hace un bucle.
+
+	-Clase #25: 15-06-2021_Martes:
+	
+El profe está aclarando cuestiones sobre el final. Hay que hacer el sistema de ventas, ese del trabajo grupal, como un trabajo final.
+
+Arrancó hablando de archivos planos, y empezó a nombrar sus utilidades. .csv es para hacer planillas de cálculo, y es súper universal. .txt abre archivos de texto, el sistema le da un numero para identificar e iniciar el archivo desde sistema. El sistema suele pre-escribir los archivos en memoria, para demorar menos en la escritura de disco. Y para cerrarlo, toma los datos en memoria, y los transcribe al disco o memoria.
+open(ruta/archivo) abre el archivo, y close() para cerrar, "r" de read leé los archivos, "w" de write, escribe, "a" de append agrega información al final. W sobreescribe un archivo para crear uno nuevo, o escribe uno nuevo. A agrega al final. Y R leé a excepción de que el archivo exista.
+El profe mostró el Try Except. Y Finally sirve como una condición final, a pesar de lo que pase.
+Si los multiples archivos están en la misma ruta, no hace falta volver a especificarla.
+".." en todos los sistemas operativos, retorna a la carpeta anterior. "/" o "\" dependiendo del protocolo, o del sistema.
+"\" significa que hay aviso de que lo siguiente es un caracter especial.
+"\\" puede funcionar prácticamente siempre.
+
+	-Clase #26: 16-06-2021_Miercoles:
+
+Hoy arrancamos estudiando el asunto de los archivos. Poner en práctica lo que escuchamos ayer con este tema, sobre una base de datos.
+
+El profe nos esta mostrando como podemos trabajar archivos, en forma lógica, desde python.
+
+	-Clase #27: 22-06-2021_Martes:
+	
+Hoy arrancamos la clase, trabajando la base del archivo inmuebles.csv del otro día.
+Y pidió que terminaramos las actividades que estan en el aula.
+
+	-Clase #28: 23-06-2021_Miercoles:
+	
+Hoy el profe estuvo mostrando como se pueden llevar archivos a un PDF, y pidió llevar a cabo en el ejercicio de la semana pasada en una tarea.
+
+	-Clase #29: 29-06-2021_Martes:
+	
+Hoy no tuvimos clase.
+	
+	-Clase #30: 30-06-2021_Miercoles:
+	
+
+	
+
