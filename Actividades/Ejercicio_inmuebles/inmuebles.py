@@ -1,4 +1,4 @@
-inmuebles = open("inmuebles.csv", "r")
+inmuebles = open("/home/fedenoodt/Documentos/BHSIAI/Protocolo 6/GitHub/BAPIOIX/anio1/Primer_Cuatrimestre/BAPIOIX-Introduccion_Programacion/Actividades/Ejercicio_inmuebles/inmuebles.csv", "r")
 
         #=# 1 #=# #~~~~~~~~~~~~~//Lista de Vendedores\\~~~~~~~~~~~~~#
 
@@ -45,6 +45,7 @@ def insercion(titulos, detalles, operacion):
 
 def main(detalles):
     operacion = crearDiccionario()
+    linea = inmuebles.readline()
     detalles = informacion(detalles)
             
     operacion = insercion(titulos, detalles, operacion)
