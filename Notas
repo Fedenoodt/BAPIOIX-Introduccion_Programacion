@@ -167,5 +167,10 @@ Hoy no tuvimos clase.
 	
 Hoy desde el ejercicio que hicimos la clase pasada de la Imprenta, el profe nos mostró como podemos hacer la lectura por python, y a su vez, llevarlo a una web HTML. Y nos decía Diego, de lo práctico que es Python para simular todo este tipo de cuestiones.
 
-	-Clase #31: 06-07-2021_Martes:
+	-Clase #31 [CIERRE]: 06-07-2021_Martes:
+	
+Hoy presentó final. hay que hacer un trabajo con archivos .csv. Dicho trabajo esta presentado en la plataforma, lo que encarecidamente recomiendo, es resolver LIGERO Y RÁPIDO este programa.
 
+"import sys" hace de forma sencilla un print con print(sys.argv) del nombre del programa, y "argv" (argument values) mete argumentos como palabras en una lista con list().
+Con esto, hacemos una impecable entrada de datos en dos variables de año y mes. A esta se la podría cubrir con con try except para especificar errores a los tipos de errores.
+Un planteo que hace el profesor, es meter un error, si no hay un error ejecuta el archivo, los ingresos, o lo que sea.
