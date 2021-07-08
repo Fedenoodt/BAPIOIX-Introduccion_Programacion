@@ -4,9 +4,20 @@ inmuebles = open("/home/fedenoodt/Documentos/BHSIAI/Protocolo 6/GitHub/BAPIOIX/a
 
         #~~~~~~~~~~~~~//Definiciones\\~~~~~~~~~~~~~#
 
-operacion = {}
+listado = {}
 titulos = []
-detalles = []
+data = []
+
+        #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+referencia = []
+fecha_alta = []
+tipo = []
+operacion = []
+provincia = []
+superficie = []
+precio_venta = []
+fecha_venta = []
+vendedor = []
 
         #~~~~~~~~~~~~~//Funciones\\~~~~~~~~~~~~~#
 
@@ -27,38 +38,39 @@ def primeraLinea(titulos):
 def crearDiccionario():
     primeraLinea(titulos)
     for t in range(len(titulos)):
-        operacion[titulos[t]] = ''
-    return operacion
+        listado[titulos[t]] = []
+    return listado
 
-def informacion(detalles):
+def informacion(data):
     detalle = ''
-    linea = inmuebles.readline()
-    operacionador(linea, detalle, detalles)
-    return detalles
+    for linea in inmuebles:
+        operacionador(linea, detalle, data)
+        
+    return data
 
-def insercion(titulos, detalles, operacion):
-    for i in range(len(detalles)):
-        operacion[titulos[i]] = detalles[i]
-    return operacion
+def versionador(data, lista, posicion):
+    for d in range(0, len(data)):
+        if data[d] != '':
+            lista.append(data[posicion])
+
+        #####RESOLVER######ACA##########
+        # Hace falta completar esta funcion, que va a insertar en cada lista, la informacion.
 
         #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-def main(detalles):
-    operacion = crearDiccionario()
+def main(data):
+    listado = crearDiccionario()
     linea = inmuebles.readline()
-    detalles = informacion(detalles)
+    data = informacion(data)
             
-    operacion = insercion(titulos, detalles, operacion)
 
-    print(operacion)
+    print(listado)
             
         #~~~~~~~~~~~~~//Cuerpo\\~~~~~~~~~~~~~#
 
 
-main(detalles)
-    
+# main(data)
+
+a = informacion(data)
+print(a)
         #####RESOLVER######ACA##########
-    #Logramos que se junten los datos, con sus títulos en un
-    #diccionario. Ahora nos hace falta que se creen diccionarios
-    #en una lista, con las distintas operaciones y los mismos
-    #títulos.
