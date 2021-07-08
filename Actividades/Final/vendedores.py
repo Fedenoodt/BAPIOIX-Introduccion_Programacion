@@ -1,37 +1,144 @@
-import sys
-print(list(sys.argv))
+#import sys
+#print(list(sys.argv))
 
-ventas = open("/home/fedenoodt/Documentos/BHSIAI/Protocolo 6/GitHub/BAPIOIX/anio1/Primer_Cuatrimestre/BAPIOIX-Introduccion_Programacion/Actividades/Final/ventas.csv", "a")
 
-titulos = ['fecha', 'cantidad', 'código artículo', 'código cliente', 'total venta']
+# "reconocimiento()" tiene como misión principal, tomar identificaciones existentes, (si es que existe un archivo)
+# actualizarlas, si es asi, y si no, crear nuevas.
+def reconocimiento():
+    try:
+        ventas = open("/home/fedenoodt/Documentos/BHSIAI/Protocolo 6/GitHub/BAPIOIX/anio1/Primer_Cuatrimestre/BAPIOIX-Introduccion_Programacion/Actividades/Final/ventas.csv", "r")
+    except FileNotFoundError:
+        ventas = open("/home/fedenoodt/Documentos/BHSIAI/Protocolo 6/GitHub/BAPIOIX/anio1/Primer_Cuatrimestre/BAPIOIX-Introduccion_Programacion/Actividades/Final/ventas.csv", "a")
+    return ventas
 
-provisional = str(titulos)
-titulosSTR = ''
+ventas = reconocimiento()
 
-ID_C = 0
-ID_L = 0
-ID_I = 0
+titulosLista = ['fecha', 'cantidad', 'código artículo', 'código cliente', 'total venta']
 
-def crearID(tipo, ID_C, ID_I, ID_L):
-    if tipo == 'C':
-        ID_C += 1
-    elif tipo == 'L':
-        ID_L += 1
-    elif tipo == 'I':
-        ID_I += 1
+articulo_cID = 0
+articulo_lID = 0
+articulo_iID = 0
+articulo_3DID = 0
+cliente_ID = 0
 
-for t in provisional:
-    if t != '[' and t != ']' and t != "'" and t != ',':
-        print(t, end= '')
-        titulosSTR += t
+def fallo():
+    print('\nSe ingresó mal uno de los datos. Intente nuevamente.\n')
+def falloINT():
+    print('\nIngrese solo números enteros, por favor.\n')
 
-    elif t == ',':
-        t = ';'
-        print(t, end= '')
-        titulosSTR += t
-ventas.writelines(titulosSTR)
+def registros(lista):
+    titulos = str(lista)
+    string = ''
 
-crearID('C', ID_C, ID_I, ID_L)
-crearID('L', ID_C, ID_I, ID_L)
+    for t in titulos:
+        if t != '[' and t != ']' and t != "'" and t != ',':
+            print(t, end= '')
+            string += t
 
-print(ID_C, ID_I, ID_L)
+        elif t == ',':
+            t = ';'
+            print(t, end= '')
+            string += t
+    print(string)
+    ventas.writelines(string + '\n\n')
+
+def registroFecha():
+    import datetime
+    dia = str(datetime.date.today())
+
+    fechaRegistro = ''
+    for d in dia:
+        if d != '-':
+            fechaRegistro += d
+
+    return fechaRegistro
+
+def registroCantidad():
+
+    pase = False
+    while not pase:
+        try:
+            cantidad = int(input('Ingrese la cantidad: '))
+            pase = True
+        except ValueError:
+            falloINT()
+        except:
+            fallo()
+    return cantidad
+
+def categorizarArticulo():
+    articulo = 0
+
+    pase = False
+    while not pase:
+        try:
+            categoria = int(input('''Ingrese número, según la categoría 
+    que corresponda al ártículo:
+    1- Cocina
+    2- Librería
+    3- Industria
+    4- Impresión 3D
+
+    '''))
+
+            pase = True
+            
+        except ValueError:
+            falloINT()
+        except:
+            fallo()
+    return categoria
+
+def registroZona(cliente_ID):
+    try:
+        zona = input('Ingrese la zona de venta:\n\n')
+        zona = zona[0] + zona[-2] + zona[-1]
+
+        news = int(input('''Según número, ingrese que 
+        sector de la zona es:
+        1- Norte  2- Noreste  3- Noroeste  4- Este
+        5- Oeste  6- Sudeste  7- Sudoeste  8- Sur
+
+
+        '''))
+
+        brujula = ['N', 'NE', 'NO', 'E', 'O', 'SE', 'SO', 'S']
+        posicion = brujula[news - 1]
+
+        cliente_ID += 1
+
+        ceros = 4 - len(str(cliente_ID))
+        ID = (ceros * '0') + str(cliente_ID)
+
+
+    except:
+        fallo()
+
+    return zona + posicion + ID
+
+
+def registroArticulo(articulo_cID, articulo_lID, articulo_iID, articulo_3DID):
+    tipoArticulo = categorizarArticulo()
+    articulo = ''
+
+    if tipoArticulo == 1:
+        articulo_cID += 1
+        articulo = 'C' + ((3 - len(str(articulo_cID))) * '0') + str(articulo_cID)
+    elif tipoArticulo == 2:
+        articulo_lID += 1
+        articulo = 'L' + ((3 - len(str(articulo_lID))) * '0') + str(articulo_lID)
+    elif tipoArticulo == 3:
+        articulo_iID += 1
+        articulo = 'I' + ((3 - len(str(articulo_iID))) * '0') + str(articulo_iID)
+    elif tipoArticulo == 4:
+        articulo_3DID += 1
+        articulo = 'I' + ((3 - len(str(articulo_3DID))) * '0') + str(articulo_3DID)    
+
+    return(articulo)
+
+registros(titulosLista)
+
+venta = [registroFecha(), registroCantidad(), registroArticulo(articulo_cID, articulo_lID, articulo_iID, articulo_3DID),registroZona(cliente_ID)]
+print(venta)
+
+registros(venta)
