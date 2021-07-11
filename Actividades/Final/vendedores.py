@@ -27,20 +27,20 @@ def falloINT():
     print('\nIngrese solo números enteros, por favor.\n')
 
 def registros(lista):
-    titulos = str(lista)
-    string = ''
+    texto = str(lista)
+    letras = ''
 
-    for t in titulos:
-        if t != '[' and t != ']' and t != "'" and t != ',':
-            print(t, end= '')
-            string += t
+    for l in texto:
+        if l != '[' and l != ']' and l != "'" and l != ',':
+            print(l, end= '')
+            letras += l
 
-        elif t == ',':
-            t = ';'
-            print(t, end= '')
-            string += t
-    print(string)
-    ventas.writelines(string + '\n\n')
+        elif l == ',':
+            l = ';'
+            print(l, end= '')
+            letras += l
+    print(letras)
+    ventas.writelines(letras + '\n')
 
 def registroFecha():
     import datetime
@@ -72,14 +72,7 @@ def categorizarArticulo():
     pase = False
     while not pase:
         try:
-            categoria = int(input('''Ingrese número, según la categoría 
-    que corresponda al ártículo:
-    1- Cocina
-    2- Librería
-    3- Industria
-    4- Impresión 3D
-
-    '''))
+            categoria = int(input('Ingrese número, según la categoría \nque corresponda al ártículo:\n1- Cocina\n2- Librería\n3- Industria\n4- Impresión 3D\n'))
 
             pase = True
             
@@ -91,16 +84,10 @@ def categorizarArticulo():
 
 def registroZona(cliente_ID):
     try:
-        zona = input('Ingrese la zona de venta:\n\n')
+        zona = input('Ingrese la zona de venta:\n')
         zona = zona[0] + zona[-2] + zona[-1]
 
-        news = int(input('''Según número, ingrese que 
-        sector de la zona es:
-        1- Norte  2- Noreste  3- Noroeste  4- Este
-        5- Oeste  6- Sudeste  7- Sudoeste  8- Sur
-
-
-        '''))
+        news = int(input('Según número, ingrese que\nsector de la zona es:\n1- Norte  2- Noreste  3- Noroeste  4- Este\n5- Oeste  6- Sudeste  7- Sudoeste  8- Sur\n'))
 
         brujula = ['N', 'NE', 'NO', 'E', 'O', 'SE', 'SO', 'S']
         posicion = brujula[news - 1]
@@ -136,9 +123,12 @@ def registroArticulo(articulo_cID, articulo_lID, articulo_iID, articulo_3DID):
 
     return(articulo)
 
+
 registros(titulosLista)
 
 venta = [registroFecha(), registroCantidad(), registroArticulo(articulo_cID, articulo_lID, articulo_iID, articulo_3DID),registroZona(cliente_ID)]
 print(venta)
 
 registros(venta)
+
+ventas.close()
