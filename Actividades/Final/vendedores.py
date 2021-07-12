@@ -1,19 +1,38 @@
-#import sys
-#print(list(sys.argv))
+"""
+path='/home/eduardo/Python/'
+ventas=open("ventas.csv","r")
+texto = ventas.read()
+print (texto)
+ventas.close()
+texto="20210704; 200; C007; SfeNE0007; 800"
+ventas=open("ventas.csv","a")
+ventas.writelines(texto)
+ventas.close()
+"""
+from os import system
+import datetime
+
+path = 'C:/Users/Federico/Downloads/'
+ventasCSV = path + 'ventas.csv'
+
+def leerVentas():
+    ventas=open(ventasCSV,"r")
+    print(ventas.read())
+    ventas.close()
+    print('Presione enter para continuar')
+    input()
+
+def fallo():
+    print('\nSe ingresó mal uno de los datos. Intente nuevamente.\n')
+
+def falloINT():
+    print('\nIngrese solo números enteros, por favor.\n')
+    
+def falloFILE():
+    print('\nNo se creó, o no exste el archivo.\nO la ruta no esta especificada.\n')
 
 
-# "reconocimiento()" tiene como misión principal, tomar identificaciones existentes, (si es que existe un archivo)
-# actualizarlas, si es asi, y si no, crear nuevas.
-def reconocimiento():
-    try:
-        ventas = open("/home/fedenoodt/Documentos/BHSIAI/Protocolo 6/GitHub/BAPIOIX/anio1/Primer_Cuatrimestre/BAPIOIX-Introduccion_Programacion/Actividades/Final/ventas.csv", "r")
-    except FileNotFoundError:
-        ventas = open("/home/fedenoodt/Documentos/BHSIAI/Protocolo 6/GitHub/BAPIOIX/anio1/Primer_Cuatrimestre/BAPIOIX-Introduccion_Programacion/Actividades/Final/ventas.csv", "a")
-    return ventas
 
-ventas = reconocimiento()
-
-titulosLista = ['fecha', 'cantidad', 'código artículo', 'código cliente', 'total venta']
 
 articulo_cID = 0
 articulo_lID = 0
@@ -21,12 +40,7 @@ articulo_iID = 0
 articulo_3DID = 0
 cliente_ID = 0
 
-def fallo():
-    print('\nSe ingresó mal uno de los datos. Intente nuevamente.\n')
-def falloINT():
-    print('\nIngrese solo números enteros, por favor.\n')
-
-def registros(lista):
+def registros(archivo, ventasCSV, lista):
     texto = str(lista)
     letras = ''
 
@@ -40,10 +54,12 @@ def registros(lista):
             print(l, end= '')
             letras += l
     print(letras)
-    ventas.writelines(letras + '\n')
+    archivo = open(ventasCSV,"a")
+    archivo.writelines(letras + '\n')
+    archivo.close()
 
 def registroFecha():
-    import datetime
+    
     dia = str(datetime.date.today())
 
     fechaRegistro = ''
@@ -121,14 +137,87 @@ def registroArticulo(articulo_cID, articulo_lID, articulo_iID, articulo_3DID):
         articulo_3DID += 1
         articulo = 'I' + ((3 - len(str(articulo_3DID))) * '0') + str(articulo_3DID)    
 
-    return(articulo)
+    return(articulo, articulo_cID, articulo_lID, articulo_iID, articulo_3DID)
 
+def registrarVentas(identificacion):
+    venta = [registroFecha(), registroCantidad(), identificacion, registroZona(cliente_ID)]
+    print(venta)
+    registros("ventas.csv", ventasCSV, venta)
+"""
+open(ventasCSV,"a")
 
-registros(titulosLista)
+opcion=1
+while opcion !=0:
+    print('======================================================')
+    print('Ingrese la opción deseada ó "0" para salir: ')
+    print('------------------------------------------------------')
+    print('1.- Ver el archivo de ventas.')
+    print('2.- Registrar una venta')
+    print('======================================================')
+    try:
+        opcion=int(input('>>>> '))
+        if opcion != 0 and opcion == 1 or opcion == 2:
+            leerVentas()
+            if opcion == 2:
+                articulos = registroArticulo(articulo_cID, articulo_lID, articulo_iID, articulo_3DID)
+                articulo = articulos[0]
 
-venta = [registroFecha(), registroCantidad(), registroArticulo(articulo_cID, articulo_lID, articulo_iID, articulo_3DID),registroZona(cliente_ID)]
-print(venta)
+                if articulo_cID < articulos[1]:
+                    articulo_cID += articulos[1]
+                    identificacion = str(articulo + articulo_cID)
 
-registros(venta)
+                elif articulo_iID < articulos[2]:
+                    articulo_iID += articulos[2]
+                    identificacion = str(articulo + articulo_iID)
 
-ventas.close()
+                elif articulo_lID < articulos[3]:
+                    articulo_lID += articulos[3]
+                    identificacion = str(articulo + articulo_lID)
+
+                elif articulo_3DID < articulos[4]:
+                    articulo_3DID += articulos[4]
+                    identificacion = str(articulo + articulo_3DID)
+                
+                registrarVentas(identificacion)
+                
+    except ValueError:
+        falloINT()
+    except FileNotFoundError:
+        falloFILE()
+    except:
+        fallo()
+
+"""
+
+opcion=1
+while opcion !=0:
+    print('======================================================')
+    print('Ingrese la opción deseada ó "0" para salir: ')
+    print('------------------------------------------------------')
+    print('1.- Ver el archivo de ventas.')
+    print('2.- Registrar una venta')
+    print('======================================================')
+    opcion=int(input('>>>> '))
+    if opcion != 0 and opcion == 1 or opcion == 2:
+        leerVentas()
+        if opcion == 2:
+            articulos = registroArticulo(articulo_cID, articulo_lID, articulo_iID, articulo_3DID)
+            articulo = articulos[0]
+
+            if articulo_cID < articulos[1]:
+                articulo_cID += articulos[1]
+                identificacion = articulo + str(articulo_cID)
+
+            elif articulo_iID < articulos[2]:
+                articulo_iID += articulos[2]
+                identificacion = articulo + str(articulo_iID)
+
+            elif articulo_lID < articulos[3]:
+                articulo_lID += articulos[3]
+                identificacion = articulo + str(articulo_lID)
+
+            elif articulo_3DID < articulos[4]:
+                articulo_3DID += articulos[4]
+                identificacion = articulo + str(articulo_3DID)
+            
+            registrarVentas(identificacion)
