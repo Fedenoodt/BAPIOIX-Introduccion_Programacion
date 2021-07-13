@@ -151,16 +151,17 @@ def registrarNombre(valor):
         fallo()
     return valor
 
-def registrarValor(numero):
-    numero = 0    
-    while numero < 0 and numero > 100:
+def registrarPorcentaje():
+    porcentaje = 0    
+    while porcentaje < 0 and porcentaje > 100:
         try:
-            numero = int(input("Ingrese porcentaje de la comisión, y después, el monto mínimo.\n\n"))
+            porcentaje = int(input("Ingrese porcentaje de la comisión, y después, el monto mínimo.\n\n"))
             
         except ValueError:
             falloINT()
         except:
             fallo()
+    return porcentaje
 
 open(ventasCSV,"a")
 
