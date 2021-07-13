@@ -143,7 +143,25 @@ def registrarVentas(identificacion):
     venta = [registroFecha(), registroCantidad(), identificacion, registroZona(cliente_ID)]
     print(venta)
     registros("ventas.csv", ventasCSV, venta)
-"""
+    
+def registrarNombre(valor):
+    try:
+        valor = input("Ingrese el apellido, a continuación, el nombre del vendedor.\n\n")
+    except:
+        fallo()
+    return valor
+
+def registrarValor(numero):
+    numero = 0    
+    while numero < 0 and numero > 100:
+        try:
+            numero = int(input("Ingrese porcentaje de la comisión, y después, el monto mínimo.\n\n"))
+            
+        except ValueError:
+            falloINT()
+        except:
+            fallo()
+
 open(ventasCSV,"a")
 
 opcion=1
@@ -157,26 +175,27 @@ while opcion !=0:
     try:
         opcion=int(input('>>>> '))
         if opcion != 0 and opcion == 1 or opcion == 2:
-            leerVentas()
+            if opcion == 1:
+                leerVentas()
             if opcion == 2:
                 articulos = registroArticulo(articulo_cID, articulo_lID, articulo_iID, articulo_3DID)
                 articulo = articulos[0]
 
                 if articulo_cID < articulos[1]:
                     articulo_cID += articulos[1]
-                    identificacion = str(articulo + articulo_cID)
+                    identificacion = articulo
 
                 elif articulo_iID < articulos[2]:
                     articulo_iID += articulos[2]
-                    identificacion = str(articulo + articulo_iID)
+                    identificacion = articulo
 
                 elif articulo_lID < articulos[3]:
                     articulo_lID += articulos[3]
-                    identificacion = str(articulo + articulo_lID)
+                    identificacion = articulo
 
                 elif articulo_3DID < articulos[4]:
                     articulo_3DID += articulos[4]
-                    identificacion = str(articulo + articulo_3DID)
+                    identificacion = articulo
                 
                 registrarVentas(identificacion)
                 
@@ -186,38 +205,3 @@ while opcion !=0:
         falloFILE()
     except:
         fallo()
-
-"""
-
-opcion=1
-while opcion !=0:
-    print('======================================================')
-    print('Ingrese la opción deseada ó "0" para salir: ')
-    print('------------------------------------------------------')
-    print('1.- Ver el archivo de ventas.')
-    print('2.- Registrar una venta')
-    print('======================================================')
-    opcion=int(input('>>>> '))
-    if opcion != 0 and opcion == 1 or opcion == 2:
-        leerVentas()
-        if opcion == 2:
-            articulos = registroArticulo(articulo_cID, articulo_lID, articulo_iID, articulo_3DID)
-            articulo = articulos[0]
-
-            if articulo_cID < articulos[1]:
-                articulo_cID += articulos[1]
-                identificacion = articulo + str(articulo_cID)
-
-            elif articulo_iID < articulos[2]:
-                articulo_iID += articulos[2]
-                identificacion = articulo + str(articulo_iID)
-
-            elif articulo_lID < articulos[3]:
-                articulo_lID += articulos[3]
-                identificacion = articulo + str(articulo_lID)
-
-            elif articulo_3DID < articulos[4]:
-                articulo_3DID += articulos[4]
-                identificacion = articulo + str(articulo_3DID)
-            
-            registrarVentas(identificacion)
