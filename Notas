@@ -174,3 +174,7 @@ Hoy presentó final. hay que hacer un trabajo con archivos .csv. Dicho trabajo e
 "import sys" hace de forma sencilla un print con print(sys.argv) del nombre del programa, y "argv" (argument values) mete argumentos como palabras en una lista con list().
 Con esto, hacemos una impecable entrada de datos en dos variables de año y mes. A esta se la podría cubrir con con try except para especificar errores a los tipos de errores.
 Un planteo que hace el profesor, es meter un error, si no hay un error ejecuta el archivo, los ingresos, o lo que sea.
+
+	-Clase #32 [DEFENSA DEL FINAL]: 08-03-2022_Martes:
+
+La consigna es simple. 
